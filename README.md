@@ -1,6 +1,6 @@
 # flutter_next_gen
 
-A new Flutter project.
+Creating next gen interfaces with animations etc...
 
 ## Getting Started
 
