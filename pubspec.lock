@@ -49,6 +49,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
+  extra_alignments:
+    dependency: "direct main"
+    description:
+      name: extra_alignments
+      sha256: cc0425d08b3f1b3404439da939593aa3b7931c6f7f251030632e14337bf79e00
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0+1"
   fake_async:
     dependency: transitive
     description:
@@ -83,6 +91,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  focusable_control_builder:
+    dependency: "direct main"
+    description:
+      name: focusable_control_builder
+      sha256: "61848d77169b9faf00d7c53a70bf3388456542ff2f5cf9b950118a1790bec5d7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1+1"
+  gap:
+    dependency: "direct main"
+    description:
+      name: gap
+      sha256: "976fa1e405d7d8249b3d2ec0e18a1eac116f0a86430c29a7485dff6f5326f03a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   js:
     dependency: transitive
     description:
@@ -219,4 +243,4 @@ packages:
     version: "0.1.0"
 sdks:
   dart: ">=3.0.0 <4.0.0"
-  flutter: ">=1.17.0"
+  flutter: ">=3.7.0"
