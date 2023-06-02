@@ -3,16 +3,46 @@ import 'package:flutter/material.dart';
 import '../assets.dart';
 import '../styles.dart';
 
-class TitleScreen extends StatelessWidget {
+import './title_scene_ui.dart';
+
+class TitleScreen extends StatefulWidget {
   const TitleScreen({super.key});
+
+  @override
+  State<TitleScreen> createState() => _TitleScreenState();
+}
+
+class _TitleScreenState extends State<TitleScreen> {
+  Color get _emitColor =>
+      AppColors.emitColors[_difficultyOverride ?? _difficulty];
+  Color get _orbColor =>
+      AppColors.orbColors[_difficultyOverride ?? _difficulty];
+
+  // current selected difficulty
+  int _difficulty = 0;
+  // current focused difficulty
+  int? _difficultyOverride;
+
+  void _handleDifficultyPressed(int value) {
+    print('onPressed - what is the value: ${value}');
+    setState(() {
+      _difficulty = value;
+    });
+  }
+
+  void _handleDifficultyFocused(int? value) {
+    setState(() {
+      _difficultyOverride = value;
+    });
+  }
 
   final _finalReceivedLightAmt = .7;
   final _finalEmitLightAmt = .5;
 
   @override
   Widget build(BuildContext context) {
-    final orbColor = AppColors.orbColors[0];
-    final emitColor = AppColors.emitColors[0];
+    final orbColor = AppColors.orbColors[_difficulty];
+    final emitColor = AppColors.emitColors[_difficulty];
     return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
@@ -68,6 +98,14 @@ class TitleScreen extends StatelessWidget {
               color: emitColor,
               lightAmt: _finalEmitLightAmt,
             ),
+
+            /// ui layer
+            Positioned(
+                child: TitleScreenUi(
+              difficulty: _difficulty,
+              onDifficultyPressed: _handleDifficultyPressed,
+              onDifficultyFocused: _handleDifficultyFocused,
+            ))
           ],
         ),
       ),
